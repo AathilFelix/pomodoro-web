@@ -1,0 +1,249 @@
+:root {
+    --primary-color: #ff6b6b;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --button-hover: #ff8787;
+    --circle-bg: #f8f9fa;
+}
+
+[data-theme="dark"] {
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+    --circle-bg: #2d2d2d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-toggle button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle button:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.timer-container {
+    text-align: center;
+    padding: 2rem;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.timer-display {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 2rem;
+}
+
+.progress-ring {
+    position: relative;
+}
+
+.progress-ring-circle {
+    fill: none;
+    stroke: var(--primary-color);
+    stroke-width: 8;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 0.3s;
+}
+
+.time {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.controls {
+    margin-bottom: 2rem;
+}
+
+.control-btn {
+    background: var(--primary-color);
+    border: none;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.control-btn:hover {
+    background-color: var(--button-hover);
+}
+
+.mode-switcher {
+    margin-bottom: 2rem;
+}
+
+.mode-btn {
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.mode-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.stats {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.share-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.share-btn:hover {
+    background-color: var(--button-hover);
+}
+
+.share-btn i {
+    margin-right: 0.5rem;
+}
+
+/* Music Player Styles */
+.music-player {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--circle-bg);
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.music-player h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.music-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.music-btn {
+    background: var(--primary-color);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.music-btn:hover {
+    background-color: var(--button-hover);
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.volume-control i {
+    color: var(--text-color);
+}
+
+#volumeSlider {
+    width: 100px;
+    height: 4px;
+    -webkit-appearance: none;
+    background: var(--primary-color);
+    border-radius: 2px;
+    outline: none;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.music-select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.music-select:focus {
+    border-color: var(--button-hover);
+}
+
+#youtubePlayer {
+    display: none;
+    margin-top: 1rem;
+    width: 100%;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+}

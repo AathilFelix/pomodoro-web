@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="theme-toggle">
+            <button id="darkModeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+        
+        <div class="timer-container">
+            <h1>Pomodoro Timer</h1>
+            <div class="timer-display">
+                <div class="progress-ring">
+                    <svg class="progress" width="300" height="300">
+                        <circle class="progress-ring-circle" cx="150" cy="150" r="140" />
+                    </svg>
+                    <div class="time">25:00</div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="startBtn" class="control-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button id="resetBtn" class="control-btn">
+                    <i class="fas fa-redo"></i>
+                </button>
+            </div>
+
+            <div class="mode-switcher">
+                <button class="mode-btn active" data-mode="pomodoro">Pomodoro</button>
+                <button class="mode-btn" data-mode="shortBreak">Short Break</button>
+                <button class="mode-btn" data-mode="longBreak">Long Break</button>
+            </div>
+
+            <div class="stats">
+                <p>Sessions completed: <span id="sessionsCount">0</span></p>
+            </div>
+
+            <div class="share-container">
+                <button id="shareBtn" class="share-btn">
+                    <i class="fas fa-share-alt"></i> Share Your Streak
+                </button>
+            </div>
+
+            <div class="music-player">
+                <h3>Background Music</h3>
+                <div class="music-controls">
+                    <button id="toggleMusic" class="music-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <div class="volume-control">
+                        <i class="fas fa-volume-up"></i>
+                        <input type="range" id="volumeSlider" min="0" max="100" value="50">
+                    </div>
+                </div>
+                <select id="musicTrack" class="music-select">
+                    <option value="jfKfPfyJRdk">Lofi Hip Hop Radio - Beats to Relax/Study</option>
+                    <option value="sAcj8me7wGI">Piano Relaxing Music</option>
+                    <option value="sjkrrmBnpGE">Ambient Study Music</option>
+                </select>
+                <div id="youtubePlayer"></div>
+            </div>
+        </div>
+    </div>
+    <audio id="timerComplete" src="assets/timer-complete.mp3"></audio>
+    <script src="js/script.js"></script>
+</body>
+</html>
